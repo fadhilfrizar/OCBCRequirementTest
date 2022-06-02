@@ -6,16 +6,41 @@
 //
 
 import XCTest
+@testable import OCBC_Test
 
 class HomeControllerTests: XCTestCase {
 
+    var storyboard: UIStoryboard!
+    var sut: HomeController!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = storyboard.instantiateViewController(identifier: "homeController") as HomeController
+        sut.loadViewIfNeeded()
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        storyboard = nil
+        sut = nil
     }
-
+    
+    func testHomeController_WhenCreated_HasConnectedIBOutlet() throws {
+        _ = try XCTUnwrap(sut.logoutButton, "The logoutButton is not connected to an IBOutlet")
+        _ = try XCTUnwrap(sut.activityContainerView, "The activityContainerView is not connected to an IBOutlet")
+        
+        _ = try XCTUnwrap(sut.accountBalanceLabel, "The accountBalanceLabel is not connected to an IBOutlet")
+        _ = try XCTUnwrap(sut.balanceLabel, "The balanceLabel is not connected to an IBOutlet")
+        
+        _ = try XCTUnwrap(sut.accountNoLabel, "The accountNoLabel is not connected to an IBOutlet")
+        _ = try XCTUnwrap(sut.accountLabel, "The accountLabel is not connected to an IBOutlet")
+        
+        _ = try XCTUnwrap(sut.accountHolderLabel, "The accountHolderLabel is not connected to an IBOutlet")
+        _ = try XCTUnwrap(sut.accountHolderNameLabel, "The accountHolderNameLabel is not connected to an IBOutlet")
+        
+        _ = try XCTUnwrap(sut.transactionHistoryLabel, "The transactionHistoryLabel is not connected to an IBOutlet")
+        _ = try XCTUnwrap(sut.transactionCollectionView, "The transactionCollectionView is not connected to an IBOutlet")
+    }
 
 }
