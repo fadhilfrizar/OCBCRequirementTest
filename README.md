@@ -5,7 +5,7 @@
 | Name | Version | 
 | ------------- | ------------- | 
 | Minimal OS | iOS 13.5 | 
-| Target OS | iOS 11.0-15.5 | 
+| Target OS | iOS 13.5-15.5 | 
 | Swift | 4,5 | 
 
 ### Technology Stack  
