@@ -48,11 +48,21 @@ class LoginController: UIViewController {
     }
     
     let storyboards = UIStoryboard(name: "Main", bundle: nil)
-    
+    var loginPresenter: LoginPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if loginPresenter == nil {
+            let loginFormModelValidator = LoginFormModelValidator()
+            let webservice = LoginService(urlString: Const.LOGIN)
+            
+            loginPresenter = LoginPresenter(formModelValidator: loginFormModelValidator, webservice: webservice, delegate: self)
+        }
     }
 
 
@@ -61,12 +71,29 @@ class LoginController: UIViewController {
 //MARK: action button
 extension LoginController {
     @objc func loginButtonAction(_ sender: UIButton) {
-        let controller = self.storyboards.instantiateViewController(withIdentifier: "homeController") as! HomeController
-        self.navigationController?.pushViewController(controller, animated: true)
+        let loginFormModel = LoginFormModel(username: usernameTextField.text ?? "",
+                                            password: passwordTextField.text ?? "")
+        
+        loginPresenter?.processLogin(formModel: loginFormModel)
+
     }
     
     @objc func registerButtonAction(_ sender: UIButton) {
         let controller = self.storyboards.instantiateViewController(withIdentifier: "registerController") as! RegisterController
         self.navigationController?.pushViewController(controller, animated: true)
     }
+}
+
+
+extension LoginController: LoginViewDelegateProtocol {
+    func successfullLogin() {
+        // TODO:
+        
+    }
+    
+    func errorHandler(error: LoginError) {
+        // TODO:
+    }
+    
+    
 }
