@@ -28,11 +28,13 @@ class MockLoginViewDelegate: LoginViewDelegateProtocol {
     }
     
     func startLoading() {
-        
     }
     
     func finishLoading() {
-        
+    }
+    
+    func usernameAndPasswordEmpty(description: String) {
+        expectation?.fulfill()
     }
  
 }

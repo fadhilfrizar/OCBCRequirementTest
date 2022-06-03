@@ -1,13 +1,13 @@
 //
-//  LoginError.swift
+//  BalanceError.swift
 //  OCBC Test
 //
-//  Created by USER-MAC-GLIT-007 on 02/06/22.
+//  Created by USER-MAC-GLIT-007 on 03/06/22.
 //
 
 import Foundation
 
-enum LoginError: LocalizedError, Equatable {
+enum BalanceError: LocalizedError, Equatable {
     
     case invalidResponseModel
     case invalidRequestURLString

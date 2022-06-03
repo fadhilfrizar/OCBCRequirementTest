@@ -12,6 +12,5 @@ protocol LoginModelValidatorProtocol {
     func isUsernameValid(username: String) -> Bool
     
     func isPasswordValid(password: String) -> Bool
-    
-//    func doPasswordsMatch(password: String, repeatPassword: String) -> Bool
+    func isUsernamePasswordNotEmpty(username: String, password: String) -> Bool
 }

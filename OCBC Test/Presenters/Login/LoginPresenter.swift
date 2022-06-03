@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class LoginPresenter: LoginPresenterProtocol {
     
     private var formModelValidator: LoginModelValidatorProtocol
@@ -22,7 +21,12 @@ class LoginPresenter: LoginPresenterProtocol {
     }
     
     func processLogin(formModel: LoginFormModel) {
-        self.delegate?.startLoading()
+        
+        
+        if !formModelValidator.isUsernamePasswordNotEmpty(username: formModel.username, password: formModel.password) {
+            self.delegate?.usernameAndPasswordEmpty(description: "Username and password is required")
+            return
+        }
         
         if !formModelValidator.isUsernameValid(username: formModel.username) {
             return
@@ -33,7 +37,7 @@ class LoginPresenter: LoginPresenterProtocol {
         }
         
         let requestModel = LoginFormRequestModel(username: formModel.username, password: formModel.password)
-        
+        self.delegate?.startLoading()
         webservice.login(withForm: requestModel) { [weak self] (responseModel, error) in
             if let error = error {
                 self?.delegate?.errorHandler(error: error)

@@ -12,6 +12,7 @@ class MockLoginModelValidator: LoginModelValidatorProtocol {
     
     var isUsernameValidated: Bool = false
     var isPasswordValidated: Bool = false
+    var isUsernameAndPasswordValidated: Bool = false
     
     func isUsernameValid(username: String) -> Bool {
         isUsernameValidated = true
@@ -23,5 +24,9 @@ class MockLoginModelValidator: LoginModelValidatorProtocol {
         return isPasswordValidated
     }
     
+    func isUsernamePasswordNotEmpty(username: String, password: String) -> Bool {
+        isUsernameAndPasswordValidated = true
+        return isUsernameAndPasswordValidated
+    }
 
 }

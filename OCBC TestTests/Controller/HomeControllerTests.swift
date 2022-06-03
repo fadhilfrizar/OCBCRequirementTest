@@ -41,6 +41,7 @@ class HomeControllerTests: XCTestCase {
         
         _ = try XCTUnwrap(sut.transactionHistoryLabel, "The transactionHistoryLabel is not connected to an IBOutlet")
         _ = try XCTUnwrap(sut.transactionCollectionView, "The transactionCollectionView is not connected to an IBOutlet")
+        _ = try XCTUnwrap(sut.indicator, "The indicator is not connected to an IBOutlet")
     }
 
 }

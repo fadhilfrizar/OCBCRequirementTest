@@ -28,9 +28,13 @@ class LoginFormModelValidator: LoginModelValidatorProtocol {
         
         return returnValue
     }
-//
-//    func doPasswordsMatch(password: String, repeatPassword: String) -> Bool {
-//        return password == repeatPassword
-//    }
+    
+    func isUsernamePasswordNotEmpty(username: String, password: String) -> Bool {
+        var returnValue = true
+        if username.isEmpty || password.isEmpty {
+            returnValue = false
+        }
+        return returnValue
+    }
     
 }

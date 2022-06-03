@@ -12,4 +12,5 @@ protocol LoginViewDelegateProtocol: AnyObject {
     func errorHandler(error: LoginError)
     func startLoading()
     func finishLoading()
+    func usernameAndPasswordEmpty(description: String)
 }

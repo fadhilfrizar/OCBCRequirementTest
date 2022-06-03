@@ -43,6 +43,7 @@ class LoginPresenterTests: XCTestCase {
         // Assert
         XCTAssertTrue(mockLoginModelValidator.isUsernameValidated,"username was not validated")
         XCTAssertTrue(mockLoginModelValidator.isPasswordValidated, "Password was not validated")
+        XCTAssertTrue(mockLoginModelValidator.isUsernameAndPasswordValidated, "Username and Password was not validated")
         
     }
     

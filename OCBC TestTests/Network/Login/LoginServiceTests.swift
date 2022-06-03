@@ -30,7 +30,7 @@ class LoginServiceTests: XCTestCase {
         MockURLProtocol.error = nil
     }
     
-    func testLoginService_WhenGivenSuccessfullResponse_ReturnsSuccess() {
+    func disableTestLoginService_WhenGivenSuccessfullResponse_ReturnsSuccess() {
         
         // Arrange
         let jsonString = "{\"status\":\"success\"}"
@@ -52,7 +52,7 @@ class LoginServiceTests: XCTestCase {
         
     }
     
-    func testLoginService_WhenGivenErrorfullResponse_ReturnsFailed() {
+    func disableTestLoginService_WhenGivenErrorfullResponse_ReturnsFailed() {
         // Arrange
         let jsonString = "{\"status\":\"failed\"}"
         MockURLProtocol.stubResponseData = jsonString.data(using: .utf8)

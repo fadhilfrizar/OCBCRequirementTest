@@ -92,6 +92,12 @@ extension LoginController {
 
 
 extension LoginController: LoginViewDelegateProtocol {
+    func usernameAndPasswordEmpty(description: String) {
+        self.passwordErrorMessageLabel.isHidden = false
+        self.passwordErrorMessageLabel.text = description
+        self.indicator.isHidden = true
+    }
+    
     func startLoading() {
         DispatchQueue.main.async {
             self.indicator.isHidden = false
@@ -115,8 +121,6 @@ extension LoginController: LoginViewDelegateProtocol {
             let controller = self.storyboards.instantiateViewController(withIdentifier: "homeController") as! HomeController
             self.view.window?.rootViewController = controller
         }
-        
-        
         
     }
     
