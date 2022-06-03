@@ -22,6 +22,7 @@ class LoginPresenter: LoginPresenterProtocol {
     }
     
     func processLogin(formModel: LoginFormModel) {
+        self.delegate?.startLoading()
         
         if !formModelValidator.isUsernameValid(username: formModel.username) {
             return
@@ -36,13 +37,14 @@ class LoginPresenter: LoginPresenterProtocol {
         webservice.login(withForm: requestModel) { [weak self] (responseModel, error) in
             if let error = error {
                 self?.delegate?.errorHandler(error: error)
+                self?.delegate?.finishLoading()
                 return
             }
             
-            if let _ = responseModel {
-                self?.delegate?.successfullLogin()
+            if let responseModel = responseModel {
+                self?.delegate?.successfullLogin(response: responseModel)
+                self?.delegate?.finishLoading()
             }
         }
-        
     }
 }

@@ -47,6 +47,12 @@ class LoginController: UIViewController {
         }
     }
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView! {
+        didSet {
+            indicator.isHidden = true
+        }
+    }
+    
     let storyboards = UIStoryboard(name: "Main", bundle: nil)
     var loginPresenter: LoginPresenterProtocol?
     
@@ -86,13 +92,39 @@ extension LoginController {
 
 
 extension LoginController: LoginViewDelegateProtocol {
-    func successfullLogin() {
+    func startLoading() {
+        DispatchQueue.main.async {
+            self.indicator.isHidden = false
+            self.indicator.startAnimating()
+        }
+        
+    }
+    
+    func finishLoading() {
+        DispatchQueue.main.async {
+            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
+        }
+        
+    }
+    
+    func successfullLogin(response: LoginResponseModel) {
         // TODO:
+        Credential.shared.saveCredential(response: response)
+        DispatchQueue.main.async {
+            let controller = self.storyboards.instantiateViewController(withIdentifier: "homeController") as! HomeController
+            self.view.window?.rootViewController = controller
+        }
+        
+        
         
     }
     
     func errorHandler(error: LoginError) {
         // TODO:
+        DispatchQueue.main.async {
+            self.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+        }
     }
     
     

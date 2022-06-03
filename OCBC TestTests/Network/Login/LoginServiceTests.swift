@@ -52,24 +52,25 @@ class LoginServiceTests: XCTestCase {
         
     }
     
-    func testLoginService_WhenReceivedDifferentJSONResponse_ErrorTookPlace() {
+    func testLoginService_WhenGivenErrorfullResponse_ReturnsFailed() {
         // Arrange
-        let jsonString = "{\"path\":\"/users\", \"error\":\"Internal Server Error\"}"
-        MockURLProtocol.stubResponseData =  jsonString.data(using: .utf8)
+        let jsonString = "{\"status\":\"failed\"}"
+        MockURLProtocol.stubResponseData = jsonString.data(using: .utf8)
         
-        let expectation = self.expectation(description: "Signup() method expectation for a response that contains a different JSON structure")
+        let expectation = self.expectation(description: "Login Service Response Expectation")
         
         // Act
         sut.login(withForm: loginFormRequestModel) { (loginResponseModel, error) in
             
             // Assert
-            XCTAssertNil(loginResponseModel, "The response model for a request containing unknown JSON response, should have been nil")
-            XCTAssertEqual(error, LoginError.invalidResponseModel, "The signup() method did not return expected error")
+            //"{\"status\":\"failed\"}"
+            XCTAssertEqual(loginResponseModel?.status, "failed")
             expectation.fulfill()
             
         }
         
         self.wait(for: [expectation], timeout: 5)
+        
     }
     
     func testLoginService_WhenEmptyURLStringProvided_ReturnsError() {
@@ -82,7 +83,7 @@ class LoginServiceTests: XCTestCase {
         sut.login(withForm: loginFormRequestModel) { (loginResponseModel, error) in
             
             // Assert
-            XCTAssertEqual(error, LoginError.invalidRequestURLString, "The signup() method did not return an expected error for an invalidRequestURLString error")
+            XCTAssertEqual(error, LoginError.invalidRequestURLString, "The login() method did not return an expected error for an invalidRequestURLString error")
             XCTAssertNil(loginResponseModel, "When an invalidRequestURLString takes place, the response model must be nil")
             expectation.fulfill()
         }
@@ -94,13 +95,13 @@ class LoginServiceTests: XCTestCase {
         
         // Arrange
         let expectation = self.expectation(description: "A failed Request expectation")
-        let errorDescription = "A localized description of an error"
+        let errorDescription = "The operation couldn’t be completed. (OCBC_Test.LoginError error 0.)"
         MockURLProtocol.error = LoginError.failedRequest(description:errorDescription)
         
         // Act
         sut.login(withForm: loginFormRequestModel) { (loginResponseModel, error) in
             // Assert
-            XCTAssertEqual(error, LoginError.failedRequest(description:errorDescription), "The signup() method did not return an expecter error for the Failed Request")
+            XCTAssertEqual(error, LoginError.failedRequest(description:errorDescription), "The login() method did not return an expecter error for the Failed Request")
             // XCTAssertEqual(error?.localizedDescription, errorDescription)
             expectation.fulfill()
         }

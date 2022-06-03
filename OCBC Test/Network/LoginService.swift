@@ -36,10 +36,28 @@ class LoginService: LoginServiceProtocol {
             }
             
             if let data = data, let loginResponseModel = try? JSONDecoder().decode(LoginResponseModel.self, from: data) {
-                print("loginResponseModel = \(loginResponseModel)")
                 completionHandler(loginResponseModel, nil)
             } else {
-                completionHandler(nil, LoginError.invalidResponseModel)
+                if let httpResponse = response as? HTTPURLResponse {
+                    switch httpResponse.statusCode {
+                    case 400 :
+                        completionHandler(nil, LoginError.badRequest)
+                    case 401:
+                        completionHandler(nil, LoginError.unauthorized)
+                    case 403:
+                        completionHandler(nil, LoginError.forbidden)
+                    case 404:
+                        completionHandler(nil, LoginError.notFound)
+                    case 409:
+                        completionHandler(nil, LoginError.conflict)
+                    case 422:
+                        completionHandler(nil, LoginError.unprocessableEntity)
+                    case 500:
+                        completionHandler(nil, LoginError.internalServerError)
+                    default:
+                        completionHandler(nil, LoginError.invalidResponseModel)
+                    }
+                }
             }
         }
         

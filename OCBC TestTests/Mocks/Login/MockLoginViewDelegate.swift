@@ -16,7 +16,7 @@ class MockLoginViewDelegate: LoginViewDelegateProtocol {
     var errorHandlerCounter = 0
     var signupError: LoginError?
     
-    func successfullLogin() {
+    func successfullLogin(response: LoginResponseModel) {
         successfulSignupCounter += 1
         expectation?.fulfill()
     }
@@ -25,6 +25,14 @@ class MockLoginViewDelegate: LoginViewDelegateProtocol {
         signupError = error
         errorHandlerCounter += 1
         expectation?.fulfill()
+    }
+    
+    func startLoading() {
+        
+    }
+    
+    func finishLoading() {
+        
     }
  
 }

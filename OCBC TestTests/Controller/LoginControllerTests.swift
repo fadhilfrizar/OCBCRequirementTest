@@ -42,6 +42,7 @@ class LoginControllerTests: XCTestCase {
         
         _ = try XCTUnwrap(sut.loginButton, "The loginButton is not connected to an IBOutlet")
         _ = try XCTUnwrap(sut.registerButton, "The registerButton is not connected to an IBOutlet")
+        _ = try XCTUnwrap(sut.indicator, "The indicator is not connected to an IBOutlet")
     }
 
     

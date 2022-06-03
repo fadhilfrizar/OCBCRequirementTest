@@ -8,6 +8,8 @@
 import Foundation
 
 protocol LoginViewDelegateProtocol: AnyObject {
-    func successfullLogin()
+    func successfullLogin(response: LoginResponseModel)
     func errorHandler(error: LoginError)
+    func startLoading()
+    func finishLoading()
 }

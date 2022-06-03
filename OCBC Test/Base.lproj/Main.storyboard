@@ -114,6 +114,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                 </buttonConfiguration>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sdv-XB-jKW">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -133,7 +136,9 @@
                             <constraint firstItem="JZ0-Is-r6M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Y15-pN-vMQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nsi-nH-Ggl" secondAttribute="trailing" constant="32" id="YoT-fk-59G"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4wh-nk-uSz" secondAttribute="trailing" constant="32" id="fnz-05-PhS"/>
+                            <constraint firstItem="sdv-XB-jKW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hVw-HX-ek3"/>
                             <constraint firstItem="nsT-MK-Eos" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="j0k-mu-ro2"/>
+                            <constraint firstItem="sdv-XB-jKW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kYi-nQ-XlC"/>
                             <constraint firstItem="nsi-nH-Ggl" firstAttribute="top" secondItem="f4G-Vr-8WX" secondAttribute="bottom" constant="32" id="osJ-Vm-tXD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f4G-Vr-8WX" secondAttribute="trailing" constant="32" id="sUK-PT-Sze"/>
                             <constraint firstItem="T3T-nn-B3V" firstAttribute="top" secondItem="JZ0-Is-r6M" secondAttribute="bottom" constant="12" id="vGK-5C-F33"/>
@@ -143,6 +148,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AGh-kS-Vo2"/>
                     <connections>
+                        <outlet property="indicator" destination="sdv-XB-jKW" id="LxW-eJ-xUd"/>
                         <outlet property="loginButton" destination="nsT-MK-Eos" id="R8v-6D-g1l"/>
                         <outlet property="loginLabel" destination="f4G-Vr-8WX" id="mrf-Av-YUL"/>
                         <outlet property="passwordContainerView" destination="T3T-nn-B3V" id="bbc-6p-66z"/>
