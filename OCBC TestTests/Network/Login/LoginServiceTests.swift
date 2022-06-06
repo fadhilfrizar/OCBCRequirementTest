@@ -10,15 +10,12 @@ import XCTest
 
 class LoginServiceTests: XCTestCase {
     
-    var sut: LoginService!
+    var sut: MockLoginService!
     var loginFormRequestModel: LoginFormRequestModel!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        let config = URLSessionConfiguration.ephemeral
-        config.protocolClasses = [MockURLProtocol.self]
-        let urlSession = URLSession(configuration: config)
-        sut = LoginService(urlString: Const.LOGIN, urlSession: urlSession)
+        sut = MockLoginService()
         loginFormRequestModel = LoginFormRequestModel(username: "test", password: "asdasd")
     }
 
@@ -26,11 +23,9 @@ class LoginServiceTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         sut = nil
         loginFormRequestModel = nil
-        MockURLProtocol.stubResponseData = nil
-        MockURLProtocol.error = nil
     }
     
-    func disableTestLoginService_WhenGivenSuccessfullResponse_ReturnsSuccess() {
+    func testLoginService_WhenGivenSuccessfullResponse_ReturnsSuccess() {
         
         // Arrange
         let jsonString = "{\"status\":\"success\"}"
@@ -52,13 +47,14 @@ class LoginServiceTests: XCTestCase {
         
     }
     
-    func disableTestLoginService_WhenGivenErrorfullResponse_ReturnsFailed() {
+    func testLoginService_WhenGivenErrorfullResponse_ReturnsFailed() {
         // Arrange
         let jsonString = "{\"status\":\"failed\"}"
         MockURLProtocol.stubResponseData = jsonString.data(using: .utf8)
         
         let expectation = self.expectation(description: "Login Service Response Expectation")
-        
+        sut.shouldReturnError = true
+        sut.isStatusFailed = true
         // Act
         sut.login(withForm: loginFormRequestModel) { (loginResponseModel, error) in
             
@@ -77,8 +73,9 @@ class LoginServiceTests: XCTestCase {
         // Arrange
         let expectation = self.expectation(description: "An empty request URL string expectation")
         
-        sut = LoginService(urlString: "")
-        
+        sut = MockLoginService()
+        sut.shouldReturnError = true
+        sut.isInvalidRequestURLString = true
         // Act
         sut.login(withForm: loginFormRequestModel) { (loginResponseModel, error) in
             
@@ -95,9 +92,10 @@ class LoginServiceTests: XCTestCase {
         
         // Arrange
         let expectation = self.expectation(description: "A failed Request expectation")
-        let errorDescription = "The operation couldn’t be completed. (OCBC_Test.LoginError error 0.)"
+        let errorDescription = "Login request was not successful"
         MockURLProtocol.error = LoginError.failedRequest(description:errorDescription)
-        
+        sut.shouldReturnError = true
+        sut.isInvalidRequestMessageError = true
         // Act
         sut.login(withForm: loginFormRequestModel) { (loginResponseModel, error) in
             // Assert

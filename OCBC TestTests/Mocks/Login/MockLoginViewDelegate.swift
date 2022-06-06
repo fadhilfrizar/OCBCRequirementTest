@@ -9,7 +9,7 @@ import Foundation
 import XCTest
 @testable import OCBC_Test
 
-class MockLoginViewDelegate: LoginViewDelegateProtocol {
+class MockLoginViewDelegate: LoginViewProtocol {
     
     var expectation: XCTestExpectation?
     var successfulSignupCounter = 0

@@ -336,7 +336,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7c-sg-6p6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="755"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-yc-OS3" customClass="LogoutButton" customModule="OCBC_Test" customModuleProvider="target">
                                                 <rect key="frame" x="328.5" y="32" width="69.5" height="50"/>
@@ -428,18 +428,18 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your transaction history" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-28-quU">
-                                                <rect key="frame" x="32" y="302" width="181" height="21"/>
+                                                <rect key="frame" x="16" y="302" width="181" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cr0-2Q-E2N">
-                                                <rect key="frame" x="0.0" y="355" width="414" height="400"/>
+                                                <rect key="frame" x="0.0" y="339" width="414" height="400"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="400" id="Kj6-qk-2du"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nwA-OS-7wo">
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nwA-OS-7wo">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -448,7 +448,7 @@
                                                 <cells/>
                                             </collectionView>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Zzv-hQ-QaG">
-                                                <rect key="frame" x="188.5" y="359" width="37" height="37"/>
+                                                <rect key="frame" x="188.5" y="351" width="37" height="37"/>
                                             </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -456,10 +456,10 @@
                                             <constraint firstAttribute="trailing" secondItem="Cr0-2Q-E2N" secondAttribute="trailing" id="8DY-kO-xOW"/>
                                             <constraint firstAttribute="trailing" secondItem="GCT-NH-rmi" secondAttribute="trailing" constant="100" id="EjL-vz-LsX"/>
                                             <constraint firstItem="GCT-NH-rmi" firstAttribute="top" secondItem="aoY-yc-OS3" secondAttribute="bottom" constant="12" id="Ey9-s0-PA1"/>
-                                            <constraint firstItem="Cr0-2Q-E2N" firstAttribute="top" secondItem="bdL-28-quU" secondAttribute="bottom" constant="32" id="QKI-2b-VWs"/>
+                                            <constraint firstItem="Cr0-2Q-E2N" firstAttribute="top" secondItem="bdL-28-quU" secondAttribute="bottom" constant="16" id="QKI-2b-VWs"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bdL-28-quU" secondAttribute="trailing" constant="20" symbolic="YES" id="RNk-MA-Cwl"/>
                                             <constraint firstItem="GCT-NH-rmi" firstAttribute="leading" secondItem="U7c-sg-6p6" secondAttribute="leading" id="VR2-2Y-Dq6"/>
-                                            <constraint firstItem="bdL-28-quU" firstAttribute="leading" secondItem="U7c-sg-6p6" secondAttribute="leading" constant="32" id="Vzb-Xm-h1i"/>
+                                            <constraint firstItem="bdL-28-quU" firstAttribute="leading" secondItem="U7c-sg-6p6" secondAttribute="leading" constant="16" id="Vzb-Xm-h1i"/>
                                             <constraint firstItem="aoY-yc-OS3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U7c-sg-6p6" secondAttribute="leading" constant="20" symbolic="YES" id="bHV-a5-oBT"/>
                                             <constraint firstItem="aoY-yc-OS3" firstAttribute="top" secondItem="U7c-sg-6p6" secondAttribute="top" constant="32" id="cVR-uU-Bu6"/>
                                             <constraint firstItem="Zzv-hQ-QaG" firstAttribute="centerY" secondItem="U7c-sg-6p6" secondAttribute="centerY" id="gfV-XJ-IHm"/>
@@ -471,6 +471,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="U7c-sg-6p6" secondAttribute="trailing" id="A6J-Dz-MaZ"/>
                                     <constraint firstItem="U7c-sg-6p6" firstAttribute="top" secondItem="fEP-0W-ymV" secondAttribute="top" id="GUd-Us-Hp7"/>
@@ -481,7 +482,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RvV-E7-jcw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RvV-E7-jcw" firstAttribute="trailing" secondItem="fEP-0W-ymV" secondAttribute="trailing" id="8eo-Tg-aM1"/>
                             <constraint firstItem="fEP-0W-ymV" firstAttribute="leading" secondItem="RvV-E7-jcw" secondAttribute="leading" id="aUn-Xw-kcb"/>
@@ -500,6 +501,7 @@
                         <outlet property="indicator" destination="Zzv-hQ-QaG" id="Xtf-QN-wB4"/>
                         <outlet property="logoutButton" destination="aoY-yc-OS3" id="hVG-eI-o7w"/>
                         <outlet property="transactionCollectionView" destination="Cr0-2Q-E2N" id="Xjf-bW-SmQ"/>
+                        <outlet property="transactionCollectionViewHeightConstraint" destination="Kj6-qk-2du" id="xh8-gQ-Eju"/>
                         <outlet property="transactionHistoryLabel" destination="bdL-28-quU" id="4cL-up-1bg"/>
                     </connections>
                 </viewController>

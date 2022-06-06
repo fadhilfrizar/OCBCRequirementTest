@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             let window = UIWindow(windowScene: windowScene)
             let accessToken = Credential.shared.gettingAccessToken()
-            print("access token", accessToken)
             
             if accessToken.isEmpty || accessToken.count == 0 || accessToken == "" {
                 DispatchQueue.main.async {

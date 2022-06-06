@@ -12,7 +12,7 @@ class MockLoginPresenter: LoginPresenterProtocol {
     
     var processLoginCalled: Bool = false
     
-    required init(formModelValidator: LoginModelValidatorProtocol, webservice: LoginServiceProtocol, delegate: LoginViewDelegateProtocol) {
+    required init(formModelValidator: LoginModelValidatorProtocol, webservice: LoginServiceProtocol, delegate: LoginViewProtocol) {
         // TODO:
     }
     
