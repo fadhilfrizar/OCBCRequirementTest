@@ -14,6 +14,7 @@ struct Const {
     static let LOGIN = "https://green-thumb-64168.uc.r.appspot.com/login"
     static let BALANCE = "https://green-thumb-64168.uc.r.appspot.com/balance"
     static let TRANSACTION = "https://green-thumb-64168.uc.r.appspot.com/transactions"
+    static let REGISTER = "https://green-thumb-64168.uc.r.appspot.com/register"
     
     struct UserCredential {
         static let CREDENTIAL_ACCESS_TOKEN = "CREDENTIAL_ACCESS_TOKEN"

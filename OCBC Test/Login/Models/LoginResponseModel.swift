@@ -8,12 +8,12 @@
 import Foundation
 
 struct LoginResponseModel: Decodable {
-    var status: String?
-    var token: String?
-    var username: String?
-    var accountNo: String?
+    var status: String
+    var token: String
+    var username: String
+    var accountNo: String
     
-    init(status: String?, token: String?, username: String?, accountNo: String?) {
+    init(status: String, token: String, username: String, accountNo: String) {
         self.status = status
         self.token = token
         self.username = username

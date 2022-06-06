@@ -8,7 +8,7 @@
 import Foundation
 
 struct TransactionRequestModel {
-    let accessToken: String?
+    let accessToken: String
     
 }
 

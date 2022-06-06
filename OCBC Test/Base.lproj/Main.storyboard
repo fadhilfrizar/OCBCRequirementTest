@@ -281,6 +281,9 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                 </buttonConfiguration>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="BXw-kQ-nzR">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pZf-c2-siu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -291,9 +294,11 @@
                             <constraint firstItem="gqE-P3-fFh" firstAttribute="top" secondItem="T1t-DJ-Hcg" secondAttribute="bottom" constant="12" id="Aa7-fa-ypa"/>
                             <constraint firstItem="Xct-sa-L3p" firstAttribute="leading" secondItem="pZf-c2-siu" secondAttribute="leading" constant="32" id="IDV-gl-Onz"/>
                             <constraint firstItem="Xct-sa-L3p" firstAttribute="top" secondItem="gqE-P3-fFh" secondAttribute="bottom" constant="12" id="IWT-Gf-mv8"/>
+                            <constraint firstItem="BXw-kQ-nzR" firstAttribute="centerY" secondItem="PKH-FX-VSE" secondAttribute="centerY" id="SF9-dj-qAj"/>
                             <constraint firstItem="xrq-m9-URE" firstAttribute="leading" secondItem="PKH-FX-VSE" secondAttribute="leading" constant="32" id="VFO-T3-KBw"/>
                             <constraint firstItem="pZf-c2-siu" firstAttribute="bottom" secondItem="Ea8-cI-QHN" secondAttribute="bottom" constant="32" id="Y4e-pb-2WA"/>
                             <constraint firstItem="pZf-c2-siu" firstAttribute="trailing" secondItem="xrq-m9-URE" secondAttribute="trailing" constant="32" id="hap-6S-ZCi"/>
+                            <constraint firstItem="BXw-kQ-nzR" firstAttribute="centerX" secondItem="PKH-FX-VSE" secondAttribute="centerX" id="jVT-Fl-z11"/>
                             <constraint firstItem="pZf-c2-siu" firstAttribute="trailing" secondItem="Ea8-cI-QHN" secondAttribute="trailing" constant="32" id="kNN-r8-uAc"/>
                             <constraint firstItem="xrq-m9-URE" firstAttribute="top" secondItem="Xct-sa-L3p" secondAttribute="bottom" constant="12" id="lMO-5l-ove"/>
                             <constraint firstItem="Hbz-da-SnU" firstAttribute="leading" secondItem="PKH-FX-VSE" secondAttribute="leading" constant="32" id="q2L-DY-A7s"/>
@@ -309,6 +314,7 @@
                         <outlet property="confirmPasswordContainerView" destination="Xct-sa-L3p" id="utP-IW-gfG"/>
                         <outlet property="confirmPasswordLabel" destination="gD7-TB-Fq0" id="NvN-Di-f4d"/>
                         <outlet property="confirmPasswordTextField" destination="2DL-YI-Xbi" id="MQH-zc-gGo"/>
+                        <outlet property="indicator" destination="BXw-kQ-nzR" id="enJ-aH-8Vv"/>
                         <outlet property="passwordContainerView" destination="gqE-P3-fFh" id="w7T-Yb-gXI"/>
                         <outlet property="passwordErrorMessageLabel" destination="xrq-m9-URE" id="GIb-VZ-4PH"/>
                         <outlet property="passwordLabel" destination="8mX-Yh-ohM" id="flr-cF-v21"/>
@@ -339,7 +345,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-yc-OS3" customClass="LogoutButton" customModule="OCBC_Test" customModuleProvider="target">
-                                                <rect key="frame" x="328.5" y="32" width="69.5" height="50"/>
+                                                <rect key="frame" x="331" y="32" width="67" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="crk-Z7-K2K"/>
                                                 </constraints>
@@ -530,16 +536,16 @@
     </scenes>
     <designables>
         <designable name="4wh-nk-uSz">
-            <size key="intrinsicContentSize" width="75" height="33.5"/>
+            <size key="intrinsicContentSize" width="86" height="38"/>
         </designable>
         <designable name="Ea8-cI-QHN">
-            <size key="intrinsicContentSize" width="75" height="33.5"/>
+            <size key="intrinsicContentSize" width="86" height="38"/>
         </designable>
         <designable name="aoY-yc-OS3">
-            <size key="intrinsicContentSize" width="69.5" height="31"/>
+            <size key="intrinsicContentSize" width="67" height="31"/>
         </designable>
         <designable name="nsT-MK-Eos">
-            <size key="intrinsicContentSize" width="75" height="33.5"/>
+            <size key="intrinsicContentSize" width="86" height="38"/>
         </designable>
     </designables>
     <resources>

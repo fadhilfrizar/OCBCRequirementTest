@@ -29,7 +29,7 @@ class MockHomeService: HomeServiceProtocol {
         if balanceShouldReturnError {
             
             if isBalanceStatusFailed {
-                let responseModel = BalanceResponseModel(status: "failed", accountNo: "", balance: nil)
+                let responseModel = BalanceResponseModel(status: "failed", accountNo: "", balance: 0)
                 completionHandler(responseModel, nil)
                 return
             }

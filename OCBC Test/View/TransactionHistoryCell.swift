@@ -16,10 +16,19 @@ class TransactionHistoryCell: UICollectionViewCell {
     
     var transactionData: TransactionDataModel! {
         didSet {
-            self.balanceLabel.text = "\(transactionData.amount ?? 0.0)"
+            
+            let format = transactionData.transactionDate?.toDate(withFormat: transactionData.transactionDate ?? "")
+            
+            self.balanceLabel.text = "SGD \(transactionData.amount ?? 0.0)"
             self.accountNoLabel.text = transactionData.receipient?.accountNo ?? ""
             self.accountHolderLabel.text = transactionData.receipient?.accountHolder ?? ""
-            self.timeLabel.text = transactionData.transactionDate ?? ""
+            
+            if transactionData.transactionType == "transfer" {
+                self.balanceLabel.textColor = UIColor.gray
+            } else {
+                self.balanceLabel.textColor = UIColor.green
+            }
+            self.timeLabel.text = format
         }
     }
     

@@ -8,11 +8,11 @@
 import Foundation
 
 struct BalanceResponseModel: Decodable {
-    var status: String?
-    var accountNo: String?
-    var balance: Int?
+    var status: String
+    var accountNo: String
+    var balance: Int
     
-    init(status: String?, accountNo: String?, balance: Int?) {
+    init(status: String, accountNo: String, balance: Int) {
         self.status = status
         self.accountNo = accountNo
         self.balance = balance

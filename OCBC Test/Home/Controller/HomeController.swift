@@ -54,6 +54,7 @@ class HomeController: UIViewController {
     
     
     var transactionData: [TransactionDataModel] = []
+    var transactionFilteredData: [Date: [TransactionDataModel]] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -98,7 +99,7 @@ extension HomeController {
         Credential.shared.logoutCredentials()
         
         let loginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginController") as! LoginController
-        self.view.window?.rootViewController = loginController
+        self.view.window?.rootViewController = UINavigationController(rootViewController: loginController)
 
         self.view.window?.makeKeyAndVisible()
     }
@@ -111,21 +112,22 @@ extension HomeController: HomeViewProtocol {
         DispatchQueue.main.async {
             for data in response.data ?? [] {
                 self.transactionData.append(data)
-                let groupByDate = Dictionary(grouping: self.transactionData) { (data) -> String in
-                    return data.receipient?.accountHolder ?? ""
-                }
-                
-                print("Group by date", groupByDate)
-                self.transactionCollectionView.reloadData()
-                self.viewDidLayoutSubviews()
             }
+            
+            let groupByDate = Dictionary(grouping: self.transactionData) { (data) -> Date in
+                let format = data.transactionDate?.getFormattedDate(dateString: data.transactionDate ?? "")
+                return format ?? Date()
+            }
+            self.transactionFilteredData = groupByDate
+            self.transactionCollectionView.reloadData()
+            self.viewDidLayoutSubviews()
         }
     }
     
     func successfullGetBalance(response: BalanceResponseModel) {
         //MARK: getting data balance
         DispatchQueue.main.async {
-            self.balanceLabel.text = "SGD \(response.balance ?? 0)"
+            self.balanceLabel.text = "SGD \(response.balance)"
             self.accountLabel.text = self.accountNo
             self.accountHolderNameLabel.text = self.username
         }
@@ -174,7 +176,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width - 32, height: 150)
+        return CGSize(width: self.view.frame.width - 32, height: 100)
     }
     
 }

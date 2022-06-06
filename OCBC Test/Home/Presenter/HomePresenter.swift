@@ -42,7 +42,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func processGetTransaction(request: TransactionRequestModel) {
-        if !homeModelValidator.isAccessTokenValid(accessToken: request.accessToken ?? "") {
+        if !homeModelValidator.isAccessTokenValid(accessToken: request.accessToken) {
             self.delegate?.tokenIsValid(description: "Access token can not be empty")
             return
         }

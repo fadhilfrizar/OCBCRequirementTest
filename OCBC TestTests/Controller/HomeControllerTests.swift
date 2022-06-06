@@ -44,4 +44,15 @@ class HomeControllerTests: XCTestCase {
         _ = try XCTUnwrap(sut.indicator, "The indicator is not connected to an IBOutlet")
     }
 
+    func testHomeController_WhenCreated_HasLogoutButtonAndAction() throws {
+        // Arrange
+        let logoutButton: UIButton = try XCTUnwrap(sut.logoutButton, "logout button does not have a referencing outlet")
+        
+        // Act
+        let logoutButtonActions = try XCTUnwrap(logoutButton.actions(forTarget: sut, forControlEvent: .touchUpInside), "logout button does not have any actions assigned to it")
+
+        // Assert
+        XCTAssertEqual(logoutButtonActions.count, 1)
+        XCTAssertEqual(logoutButtonActions.first, "logoutButtonAction:", "There is no action with a name logoutButtonAction assigned to logout button")
+    }
 }

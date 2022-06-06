@@ -49,7 +49,6 @@
 		853E9D5A2849A600004F3ED6 /* Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D592849A600004F3ED6 /* Credential.swift */; };
 		853E9D5C2849AC0F004F3ED6 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D5B2849AC0F004F3ED6 /* ToastView.swift */; };
 		853E9D5E2849AC3F004F3ED6 /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D5D2849AC3F004F3ED6 /* UIView+Toast.swift */; };
-		853E9D602849B586004F3ED6 /* LoginErrorResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D5F2849B586004F3ED6 /* LoginErrorResponseModel.swift */; };
 		853E9D622849BDFD004F3ED6 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D612849BDFD004F3ED6 /* LogoutButton.swift */; };
 		853E9D662849F0B0004F3ED6 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D652849F0B0004F3ED6 /* HomePresenter.swift */; };
 		853E9D6A2849F0ED004F3ED6 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D692849F0ED004F3ED6 /* HomeService.swift */; };
@@ -62,6 +61,13 @@
 		853E9D7A2849F3DB004F3ED6 /* HomeModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D792849F3DB004F3ED6 /* HomeModelValidator.swift */; };
 		853E9D7C2849F576004F3ED6 /* BalanceFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D7B2849F576004F3ED6 /* BalanceFormModel.swift */; };
 		853E9D802849F9A4004F3ED6 /* HomeModelValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E9D7F2849F9A4004F3ED6 /* HomeModelValidatorTests.swift */; };
+		8547AFE7284DFDD9002233AC /* MockRegisterModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFE6284DFDD9002233AC /* MockRegisterModelValidator.swift */; };
+		8547AFE9284DFDE1002233AC /* MockRegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFE8284DFDE1002233AC /* MockRegisterService.swift */; };
+		8547AFEB284DFDEC002233AC /* MockRegisterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFEA284DFDEC002233AC /* MockRegisterViewDelegate.swift */; };
+		8547AFED284DFDF4002233AC /* MockRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFEC284DFDF4002233AC /* MockRegisterPresenter.swift */; };
+		8547AFF0284DFF97002233AC /* RegisterFormModelValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFEF284DFF97002233AC /* RegisterFormModelValidatorTests.swift */; };
+		8547AFF3284E01CA002233AC /* RegisterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFF2284E01CA002233AC /* RegisterServiceTests.swift */; };
+		8547AFF6284E0359002233AC /* RegisterPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFF5284E0359002233AC /* RegisterPresenterTests.swift */; };
 		85A40E3A284D9CD30064417C /* TranscationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E39284D9CD30064417C /* TranscationResponseModel.swift */; };
 		85A40E3C284D9D710064417C /* TransactionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E3B284D9D710064417C /* TransactionRequestModel.swift */; };
 		85A40E3E284DA8240064417C /* MockHomeModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E3D284DA8240064417C /* MockHomeModelValidator.swift */; };
@@ -70,6 +76,18 @@
 		85A40E44284DA9030064417C /* MockHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E43284DA9030064417C /* MockHomePresenter.swift */; };
 		85A40E48284DAD540064417C /* HomeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E47284DAD540064417C /* HomeServiceTests.swift */; };
 		85A40E4B284DB12F0064417C /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E4A284DB12F0064417C /* HomePresenterTests.swift */; };
+		85A40E4F284DD8DB0064417C /* Date+CustomFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E4E284DD8DB0064417C /* Date+CustomFormatter.swift */; };
+		85A40E52284DF30F0064417C /* RegisterFormRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E51284DF30F0064417C /* RegisterFormRequestModel.swift */; };
+		85A40E54284DF3310064417C /* RegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E53284DF3310064417C /* RegisterResponseModel.swift */; };
+		85A40E56284DF3440064417C /* RegisterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E55284DF3440064417C /* RegisterError.swift */; };
+		85A40E58284DF3610064417C /* RegisterFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E57284DF3610064417C /* RegisterFormModel.swift */; };
+		85A40E5A284DF3770064417C /* RegisterFormModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E59284DF3770064417C /* RegisterFormModelValidator.swift */; };
+		85A40E5D284DF38B0064417C /* RegisterServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E5C284DF38B0064417C /* RegisterServiceProtocol.swift */; };
+		85A40E5F284DF3B20064417C /* RegisterModelValidatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E5E284DF3B20064417C /* RegisterModelValidatorProtocol.swift */; };
+		85A40E61284DF3DC0064417C /* RegisterPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E60284DF3DC0064417C /* RegisterPresenterProtocol.swift */; };
+		85A40E63284DF3FE0064417C /* RegisterViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E62284DF3FE0064417C /* RegisterViewProtocol.swift */; };
+		85A40E67284DF4370064417C /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E66284DF4370064417C /* RegisterService.swift */; };
+		85A40E69284DF48E0064417C /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E68284DF48E0064417C /* RegisterPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +154,6 @@
 		853E9D592849A600004F3ED6 /* Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credential.swift; sourceTree = "<group>"; };
 		853E9D5B2849AC0F004F3ED6 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		853E9D5D2849AC3F004F3ED6 /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
-		853E9D5F2849B586004F3ED6 /* LoginErrorResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorResponseModel.swift; sourceTree = "<group>"; };
 		853E9D612849BDFD004F3ED6 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		853E9D652849F0B0004F3ED6 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		853E9D692849F0ED004F3ED6 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
@@ -149,6 +166,13 @@
 		853E9D792849F3DB004F3ED6 /* HomeModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelValidator.swift; sourceTree = "<group>"; };
 		853E9D7B2849F576004F3ED6 /* BalanceFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceFormModel.swift; sourceTree = "<group>"; };
 		853E9D7F2849F9A4004F3ED6 /* HomeModelValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelValidatorTests.swift; sourceTree = "<group>"; };
+		8547AFE6284DFDD9002233AC /* MockRegisterModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterModelValidator.swift; sourceTree = "<group>"; };
+		8547AFE8284DFDE1002233AC /* MockRegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterService.swift; sourceTree = "<group>"; };
+		8547AFEA284DFDEC002233AC /* MockRegisterViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterViewDelegate.swift; sourceTree = "<group>"; };
+		8547AFEC284DFDF4002233AC /* MockRegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRegisterPresenter.swift; sourceTree = "<group>"; };
+		8547AFEF284DFF97002233AC /* RegisterFormModelValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormModelValidatorTests.swift; sourceTree = "<group>"; };
+		8547AFF2284E01CA002233AC /* RegisterServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceTests.swift; sourceTree = "<group>"; };
+		8547AFF5284E0359002233AC /* RegisterPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterTests.swift; sourceTree = "<group>"; };
 		85A40E39284D9CD30064417C /* TranscationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationResponseModel.swift; sourceTree = "<group>"; };
 		85A40E3B284D9D710064417C /* TransactionRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequestModel.swift; sourceTree = "<group>"; };
 		85A40E3D284DA8240064417C /* MockHomeModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeModelValidator.swift; sourceTree = "<group>"; };
@@ -157,6 +181,18 @@
 		85A40E43284DA9030064417C /* MockHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomePresenter.swift; sourceTree = "<group>"; };
 		85A40E47284DAD540064417C /* HomeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceTests.swift; sourceTree = "<group>"; };
 		85A40E4A284DB12F0064417C /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		85A40E4E284DD8DB0064417C /* Date+CustomFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CustomFormatter.swift"; sourceTree = "<group>"; };
+		85A40E51284DF30F0064417C /* RegisterFormRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormRequestModel.swift; sourceTree = "<group>"; };
+		85A40E53284DF3310064417C /* RegisterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponseModel.swift; sourceTree = "<group>"; };
+		85A40E55284DF3440064417C /* RegisterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterError.swift; sourceTree = "<group>"; };
+		85A40E57284DF3610064417C /* RegisterFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormModel.swift; sourceTree = "<group>"; };
+		85A40E59284DF3770064417C /* RegisterFormModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormModelValidator.swift; sourceTree = "<group>"; };
+		85A40E5C284DF38B0064417C /* RegisterServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceProtocol.swift; sourceTree = "<group>"; };
+		85A40E5E284DF3B20064417C /* RegisterModelValidatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModelValidatorProtocol.swift; sourceTree = "<group>"; };
+		85A40E60284DF3DC0064417C /* RegisterPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterProtocol.swift; sourceTree = "<group>"; };
+		85A40E62284DF3FE0064417C /* RegisterViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewProtocol.swift; sourceTree = "<group>"; };
+		85A40E66284DF4370064417C /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		85A40E68284DF48E0064417C /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +313,7 @@
 		853E9D102848C418004F3ED6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				85A40E4D284DD83A0064417C /* Date */,
 				853E9D112848C41F004F3ED6 /* UIView */,
 			);
 			path = Extension;
@@ -361,6 +398,7 @@
 			children = (
 				853E9D3E28491BF0004F3ED6 /* MocksURLProtocol.swift */,
 				853E9D812849FB23004F3ED6 /* Home */,
+				85A40E6A284DFBE20064417C /* Register */,
 				853E9D4228491C59004F3ED6 /* Login */,
 			);
 			path = Mocks;
@@ -380,7 +418,8 @@
 		853E9D4928491DC0004F3ED6 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				85A40E49284DB1030064417C /* Presenter */,
+				8547AFF4284E0348002233AC /* Register */,
+				85A40E49284DB1030064417C /* Home */,
 				853E9D4A28491DCA004F3ED6 /* Login */,
 			);
 			path = Presenters;
@@ -397,6 +436,7 @@
 		853E9D50284921FC004F3ED6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8547AFF1284E01C3002233AC /* Register */,
 				85A40E45284DAD090064417C /* Home */,
 				853E9D512849228F004F3ED6 /* Login */,
 			);
@@ -414,6 +454,7 @@
 		853E9D5428492B88004F3ED6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8547AFEE284DFF8B002233AC /* Register */,
 				853E9D7E2849F98D004F3ED6 /* Home */,
 				853E9D7D2849F97A004F3ED6 /* Login */,
 			);
@@ -463,6 +504,30 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		8547AFEE284DFF8B002233AC /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8547AFEF284DFF97002233AC /* RegisterFormModelValidatorTests.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		8547AFF1284E01C3002233AC /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8547AFF2284E01CA002233AC /* RegisterServiceTests.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		8547AFF4284E0348002233AC /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8547AFF5284E0359002233AC /* RegisterPresenterTests.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		85A40E2E284CEC250064417C /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +544,10 @@
 			isa = PBXGroup;
 			children = (
 				85A40E4C284DB6740064417C /* Controller */,
+				85A40E50284DF2F80064417C /* Models */,
+				85A40E5B284DF37D0064417C /* Protocols */,
+				85A40E64284DF4260064417C /* Presenter */,
+				85A40E65284DF42A0064417C /* Network */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -516,7 +585,6 @@
 			children = (
 				853E9D2228491669004F3ED6 /* LoginFormRequestModel.swift */,
 				853E9D25284916DF004F3ED6 /* LoginResponseModel.swift */,
-				853E9D5F2849B586004F3ED6 /* LoginErrorResponseModel.swift */,
 				853E9D272849171D004F3ED6 /* LoginError.swift */,
 				853E9D33284918F4004F3ED6 /* LoginFormModel.swift */,
 				853E9D3B28491AB6004F3ED6 /* LoginFormModelValidator.swift */,
@@ -577,12 +645,12 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		85A40E49284DB1030064417C /* Presenter */ = {
+		85A40E49284DB1030064417C /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				85A40E4A284DB12F0064417C /* HomePresenterTests.swift */,
 			);
-			path = Presenter;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		85A40E4C284DB6740064417C /* Controller */ = {
@@ -591,6 +659,64 @@
 				853E9CFF2848B4FE004F3ED6 /* RegisterController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		85A40E4D284DD83A0064417C /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				85A40E4E284DD8DB0064417C /* Date+CustomFormatter.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		85A40E50284DF2F80064417C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85A40E51284DF30F0064417C /* RegisterFormRequestModel.swift */,
+				85A40E53284DF3310064417C /* RegisterResponseModel.swift */,
+				85A40E55284DF3440064417C /* RegisterError.swift */,
+				85A40E57284DF3610064417C /* RegisterFormModel.swift */,
+				85A40E59284DF3770064417C /* RegisterFormModelValidator.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85A40E5B284DF37D0064417C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				85A40E5C284DF38B0064417C /* RegisterServiceProtocol.swift */,
+				85A40E5E284DF3B20064417C /* RegisterModelValidatorProtocol.swift */,
+				85A40E60284DF3DC0064417C /* RegisterPresenterProtocol.swift */,
+				85A40E62284DF3FE0064417C /* RegisterViewProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		85A40E64284DF4260064417C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				85A40E68284DF48E0064417C /* RegisterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		85A40E65284DF42A0064417C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				85A40E66284DF4370064417C /* RegisterService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		85A40E6A284DFBE20064417C /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8547AFE6284DFDD9002233AC /* MockRegisterModelValidator.swift */,
+				8547AFE8284DFDE1002233AC /* MockRegisterService.swift */,
+				8547AFEA284DFDEC002233AC /* MockRegisterViewDelegate.swift */,
+				8547AFEC284DFDF4002233AC /* MockRegisterPresenter.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -730,36 +856,47 @@
 				853E9D5E2849AC3F004F3ED6 /* UIView+Toast.swift in Sources */,
 				853E9D302849187C004F3ED6 /* LoginPresenterProtocol.swift in Sources */,
 				853E9D0D2848C357004F3ED6 /* RegisterButton.swift in Sources */,
+				85A40E4F284DD8DB0064417C /* Date+CustomFormatter.swift in Sources */,
 				853E9D202849163D004F3ED6 /* LoginServiceProtocol.swift in Sources */,
 				853E9D3A28491A6A004F3ED6 /* Const.swift in Sources */,
 				853E9D372849197D004F3ED6 /* LoginPresenter.swift in Sources */,
 				853E9D662849F0B0004F3ED6 /* HomePresenter.swift in Sources */,
 				853E9D622849BDFD004F3ED6 /* LogoutButton.swift in Sources */,
 				853E9D26284916DF004F3ED6 /* LoginResponseModel.swift in Sources */,
+				85A40E67284DF4370064417C /* RegisterService.swift in Sources */,
+				85A40E5D284DF38B0064417C /* RegisterServiceProtocol.swift in Sources */,
+				85A40E5F284DF3B20064417C /* RegisterModelValidatorProtocol.swift in Sources */,
 				85A40E3A284D9CD30064417C /* TranscationResponseModel.swift in Sources */,
 				853E9D002848B4FE004F3ED6 /* RegisterController.swift in Sources */,
 				853E9D3C28491AB6004F3ED6 /* LoginFormModelValidator.swift in Sources */,
 				853E9D6A2849F0ED004F3ED6 /* HomeService.swift in Sources */,
 				853E9CD42848B1B2004F3ED6 /* LoginController.swift in Sources */,
 				853E9D7A2849F3DB004F3ED6 /* HomeModelValidator.swift in Sources */,
+				85A40E61284DF3DC0064417C /* RegisterPresenterProtocol.swift in Sources */,
 				853E9D282849171D004F3ED6 /* LoginError.swift in Sources */,
 				853E9D2B28491767004F3ED6 /* LoginService.swift in Sources */,
+				85A40E63284DF3FE0064417C /* RegisterViewProtocol.swift in Sources */,
+				85A40E56284DF3440064417C /* RegisterError.swift in Sources */,
 				853E9D7C2849F576004F3ED6 /* BalanceFormModel.swift in Sources */,
 				853E9D702849F13D004F3ED6 /* BalanceResponseModel.swift in Sources */,
 				853E9D2328491669004F3ED6 /* LoginFormRequestModel.swift in Sources */,
 				853E9D162848C462004F3ED6 /* TextFieldContainerView.swift in Sources */,
+				85A40E58284DF3610064417C /* RegisterFormModel.swift in Sources */,
 				853E9D2D2849181B004F3ED6 /* LoginModelValidatorProtocol.swift in Sources */,
 				853E9D34284918F4004F3ED6 /* LoginFormModel.swift in Sources */,
 				853E9D782849F382004F3ED6 /* HomeViewProtocol.swift in Sources */,
 				853E9D742849F31B004F3ED6 /* HomeModelValidatorProtocol.swift in Sources */,
-				853E9D602849B586004F3ED6 /* LoginErrorResponseModel.swift in Sources */,
+				85A40E5A284DF3770064417C /* RegisterFormModelValidator.swift in Sources */,
+				85A40E52284DF30F0064417C /* RegisterFormRequestModel.swift in Sources */,
 				853E9D5C2849AC0F004F3ED6 /* ToastView.swift in Sources */,
 				853E9D762849F358004F3ED6 /* HomePresenterProtocol.swift in Sources */,
 				853E9CD02848B1B2004F3ED6 /* AppDelegate.swift in Sources */,
 				853E9CD22848B1B2004F3ED6 /* SceneDelegate.swift in Sources */,
 				853E9D0B2848BBB2004F3ED6 /* LoginButton.swift in Sources */,
+				85A40E54284DF3310064417C /* RegisterResponseModel.swift in Sources */,
 				853E9D32284918AC004F3ED6 /* LoginViewProtocol.swift in Sources */,
 				853E9D022848B7A6004F3ED6 /* HomeController.swift in Sources */,
+				85A40E69284DF48E0064417C /* RegisterPresenter.swift in Sources */,
 				85A40E3C284D9D710064417C /* TransactionRequestModel.swift in Sources */,
 				853E9D722849F161004F3ED6 /* HomeError.swift in Sources */,
 				853E9D5A2849A600004F3ED6 /* Credential.swift in Sources */,
@@ -771,22 +908,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8547AFF0284DFF97002233AC /* RegisterFormModelValidatorTests.swift in Sources */,
 				853E9D4428491C76004F3ED6 /* MockLoginService.swift in Sources */,
 				853E9D4128491C0E004F3ED6 /* MockLoginModelValidator.swift in Sources */,
 				85A40E3E284DA8240064417C /* MockHomeModelValidator.swift in Sources */,
 				853E9D1D28490D3B004F3ED6 /* HomeControllerTests.swift in Sources */,
+				8547AFF6284E0359002233AC /* RegisterPresenterTests.swift in Sources */,
 				853E9D1B28490542004F3ED6 /* RegisterControllerTests.swift in Sources */,
+				8547AFF3284E01CA002233AC /* RegisterServiceTests.swift in Sources */,
 				85A40E42284DA8F40064417C /* MockHomeViewDelegate.swift in Sources */,
 				853E9D4E28491E01004F3ED6 /* LoginPresenterTests.swift in Sources */,
 				85A40E40284DA8EB0064417C /* MockHomeService.swift in Sources */,
 				853E9D53284922A7004F3ED6 /* LoginServiceTests.swift in Sources */,
+				8547AFED284DFDF4002233AC /* MockRegisterPresenter.swift in Sources */,
 				85A40E48284DAD540064417C /* HomeServiceTests.swift in Sources */,
 				853E9D3F28491BF0004F3ED6 /* MocksURLProtocol.swift in Sources */,
 				85A40E4B284DB12F0064417C /* HomePresenterTests.swift in Sources */,
+				8547AFE9284DFDE1002233AC /* MockRegisterService.swift in Sources */,
+				8547AFE7284DFDD9002233AC /* MockRegisterModelValidator.swift in Sources */,
 				853E9D5628492C55004F3ED6 /* LoginFormModelValidatorTests.swift in Sources */,
 				853E9D4828491D31004F3ED6 /* MockLoginPresenter.swift in Sources */,
 				853E9D192849014B004F3ED6 /* LoginControllerTests.swift in Sources */,
 				85A40E44284DA9030064417C /* MockHomePresenter.swift in Sources */,
+				8547AFEB284DFDEC002233AC /* MockRegisterViewDelegate.swift in Sources */,
 				853E9D4628491CF1004F3ED6 /* MockLoginViewDelegate.swift in Sources */,
 				853E9D802849F9A4004F3ED6 /* HomeModelValidatorTests.swift in Sources */,
 			);

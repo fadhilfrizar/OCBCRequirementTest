@@ -23,7 +23,11 @@ class RegisterController: UIViewController {
     @IBOutlet weak var confirmPasswordLabel: UILabel!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
-    @IBOutlet weak var passwordErrorMessageLabel: UILabel!
+    @IBOutlet weak var passwordErrorMessageLabel: UILabel! {
+        didSet {
+            passwordErrorMessageLabel.isHidden = true
+        }
+    }
     
     @IBOutlet weak var registerButton: LoginButton! {
         didSet {
@@ -31,6 +35,14 @@ class RegisterController: UIViewController {
             registerButton.addTarget(self, action: #selector(registerButtonAction), for: .touchUpInside)
         }
     }
+    @IBOutlet weak var indicator: UIActivityIndicatorView! {
+        didSet {
+            indicator.isHidden = true
+        }
+    }
+    
+    let storyboards = UIStoryboard(name: "Main", bundle: nil)
+    var registerPresenter: RegisterPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +52,12 @@ class RegisterController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if registerPresenter == nil {
+            let registerFormModelValidator = RegisterFormModelValidator()
+            let webservice = RegisterService(urlString: Const.REGISTER)
+            
+            registerPresenter = RegisterPresenter(formModelValidator: registerFormModelValidator, webservice: webservice, delegate: self)
+        }
     }
 
 }
@@ -48,6 +65,51 @@ class RegisterController: UIViewController {
 //MARK: action button
 extension RegisterController {
     @objc func registerButtonAction(_ sender: UIButton) {
+        let registerFormModel = RegisterFormModel(username: usernameTextField.text ?? "",
+                                                  password: passwordTextField.text ?? "",
+                                                  repeatPassword: confirmPasswordTextField.text ?? "")
+        
+        registerPresenter?.processRegister(formModel: registerFormModel)
+    }
+}
+
+
+extension RegisterController: RegisterViewProtocol {
+    func successfullRegister(response: RegisterResponseModel) {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func errorHandler(error: RegisterError) {
+        // TODO:
+        DispatchQueue.main.async {
+            self.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+        }
+    }
+    
+    func passwordNotMatch(description: String) {
+        DispatchQueue.main.async {
+            self.passwordErrorMessageLabel.isHidden = false
+            self.passwordErrorMessageLabel.text = description
+        }
+    }
+    
+    func startLoading() {
+        DispatchQueue.main.async {
+            self.indicator.isHidden = false
+            self.indicator.startAnimating()
+        }
         
     }
+    
+    func finishLoading() {
+        DispatchQueue.main.async {
+            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
+        }
+        
+    }
+    
+    
 }

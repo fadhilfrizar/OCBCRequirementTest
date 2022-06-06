@@ -64,4 +64,21 @@ class RegisterControllerTests: XCTestCase {
         XCTAssertEqual(registerButtonActions.count, 1)
         XCTAssertEqual(registerButtonActions.first, "registerButtonAction:", "There is no action with a name registerButtonAction assigned to register button")
     }
+    
+    func testRegisterController_WhenRegisterButtonTapped_InvokesRegisterProcess() {
+        // Arrange
+//        let mockLoginModelValidator = MockLoginModelValidator()
+//        let mockLoginService = MockLoginService()
+//        let mockLoginViewDelegate = MockLoginViewDelegate()
+//        
+//        let mockLoginPresenter = MockLoginPresenter(formModelValidator: mockLoginModelValidator, webservice: mockLoginService, delegate: mockLoginViewDelegate)
+//        
+//        sut.loginPresenter = mockLoginPresenter
+//        
+//        // Act
+//        sut.loginButton.sendActions(for: .touchUpInside)
+//        
+//        // Assert
+//        XCTAssertTrue(mockLoginPresenter.processLoginCalled, "The processLoginCalled() method was not called on a Presenter object when the signup button was tapped in a SignupViewController")
+    }
 }
