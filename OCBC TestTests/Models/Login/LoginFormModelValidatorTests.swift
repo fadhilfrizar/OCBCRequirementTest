@@ -48,7 +48,7 @@ class LoginFormModelValidatorTests: XCTestCase {
     
     func testLoginFormModelValidator_WhenTooLongUsernameProvided_ShouldReturnFalse() {
         
-        let isUsernameValid = sut.isUsernameValid(username: "testestestest")
+        let isUsernameValid = sut.isUsernameValid(username: "testtestestestestestestestest")
         
         XCTAssertFalse(isUsernameValid, "The isUsernameValid() should have returned FALSE for a first name that is longer than 20 characters but it has returned TRUE")
     }
@@ -77,7 +77,7 @@ class LoginFormModelValidatorTests: XCTestCase {
     func testLoginFormModelValidator_WhenTooLongPasswordProvided_ShouldReturnFalse() {
         
         // Act
-        let isPasswordValid = sut.isPasswordValid(password: "12345678901234567")
+        let isPasswordValid = sut.isPasswordValid(password: "12391293812893128931298983129832")
         
         // Assert
         XCTAssertFalse(isPasswordValid, "The isPasswordValid() should have returned FALSE for a password that is longer than 20 but it has returned TRUE")
