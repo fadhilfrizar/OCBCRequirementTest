@@ -12,7 +12,7 @@ class HomeService: HomeServiceProtocol {
     private var urlSession: URLSession
     private var balanceUrlString: String
     private var transactionUrlString: String
-    private var accessToken = Credential.shared.gettingAccessToken()
+    let credential = Credential()
     
     init(balanceUrlString: String, transactionUrlString: String, urlSession: URLSession = .shared) {
         self.balanceUrlString = balanceUrlString
@@ -30,7 +30,7 @@ class HomeService: HomeServiceProtocol {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue(accessToken, forHTTPHeaderField: "Authorization")
+        request.setValue(credential.gettingAccessToken(), forHTTPHeaderField: "Authorization")
         
         let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
             
@@ -78,7 +78,7 @@ class HomeService: HomeServiceProtocol {
         request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue(accessToken, forHTTPHeaderField: "Authorization")
+        request.setValue(credential.gettingAccessToken(), forHTTPHeaderField: "Authorization")
         
         let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
             if let requestError = error {

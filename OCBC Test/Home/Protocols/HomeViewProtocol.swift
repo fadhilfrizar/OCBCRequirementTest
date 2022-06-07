@@ -13,5 +13,5 @@ protocol HomeViewProtocol: AnyObject {
     func errorHandler(error: HomeError)
     func startLoading()
     func finishLoading()
-    func tokenIsValid(description: String)
+    func message(description: String)
 }

@@ -22,7 +22,7 @@ class HomePresenter: HomePresenterProtocol {
     
     func processGetBalance(formModel: BalanceFormModel) {
         if !homeModelValidator.isAccessTokenValid(accessToken: formModel.accessToken) {
-            self.delegate?.tokenIsValid(description: "Access token can not be empty")
+            self.delegate?.message(description: "Access token can not be empty")
             return
         }
         
@@ -43,7 +43,7 @@ class HomePresenter: HomePresenterProtocol {
     
     func processGetTransaction(request: TransactionRequestModel) {
         if !homeModelValidator.isAccessTokenValid(accessToken: request.accessToken) {
-            self.delegate?.tokenIsValid(description: "Access token can not be empty")
+            self.delegate?.message(description: "Access token can not be empty")
             return
         }
         

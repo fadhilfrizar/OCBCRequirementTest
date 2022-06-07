@@ -10,8 +10,6 @@ import UIKit
 
 class Credential: CredentialProtocol {
 
-    
-    static let shared = Credential()
     let defaults = UserDefaults.standard
     
     func saveCredential(response: LoginResponseModel) {

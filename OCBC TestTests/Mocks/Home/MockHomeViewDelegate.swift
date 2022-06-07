@@ -15,6 +15,8 @@ class MockHomeViewDelegate: HomeViewProtocol {
     var successfulBalanceCounter = 0
     var successfulTransactionCounter = 0
     var errorHandlerCounter = 0
+    
+    var successfulMessageCounter = 0
     var homeError: HomeError?
 
     func successfullGetBalance(response: BalanceResponseModel) {
@@ -38,7 +40,8 @@ class MockHomeViewDelegate: HomeViewProtocol {
     func finishLoading() {
     }
  
-    func tokenIsValid(description: String) {
+    func message(description: String) {
+        successfulMessageCounter += 1
         expectation?.fulfill()
     }
     

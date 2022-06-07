@@ -83,5 +83,25 @@ class LoginFormModelValidatorTests: XCTestCase {
         XCTAssertFalse(isPasswordValid, "The isPasswordValid() should have returned FALSE for a password that is longer than 20 but it has returned TRUE")
         
     }
+    
+    func testLoginFormModelValidator_WhenEmptyUsernamePasswordProvided_ShouldReturnTrue() {
+        
+        // Act
+        let isUsernamePasswordNotEmpty = sut.isUsernamePasswordNotEmpty(username: "test", password: "asdasd")
+        
+        // Assert
+        XCTAssertTrue(isUsernamePasswordNotEmpty, "The isUsernamePasswordNotEmpty() should have returned TRUE for a valid username and password not empty  but it has returned FALSE")
+        
+    }
+    
+    func testLoginFormModelValidator_WhenEmptyUsernamePasswordProvided_ShouldReturnFalse() {
+        
+        // Act
+        let isUsernamePasswordNotEmpty = sut.isUsernamePasswordNotEmpty(username: "", password: "")
+        
+        // Assert
+        XCTAssertFalse(isUsernamePasswordNotEmpty, "The isUsernamePasswordNotEmpty() should have returned FALSE for username and password that is empty but it has returned TRUE")
+        
+    }
 
 }

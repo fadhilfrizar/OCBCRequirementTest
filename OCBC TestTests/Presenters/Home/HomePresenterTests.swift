@@ -139,7 +139,5 @@ class HomePresenterTests: XCTestCase {
         XCTAssertEqual(mockHomeViewDelegate.errorHandlerCounter, 1)
         XCTAssertNotNil(mockHomeViewDelegate.homeError)
     }
-    
-
 
 }

@@ -48,9 +48,10 @@ class HomeController: UIViewController {
         }
     }
     
-    let accessToken = Credential.shared.gettingAccessToken()
-    let username = Credential.shared.gettingUsername()
-    let accountNo = Credential.shared.gettingAccountNo()
+    let accessToken = Credential().gettingAccessToken()
+    let username = Credential().gettingUsername()
+    let accountNo = Credential().gettingAccountNo()
+    let credential = Credential()
     
     let storyboards = UIStoryboard(name: "Main", bundle: nil)
     var homePresenter: HomePresenterProtocol?
@@ -97,7 +98,7 @@ class HomeController: UIViewController {
 //MARK: action button
 extension HomeController {
     @objc func logoutButtonAction(_ sender: LogoutButton) {
-        Credential.shared.logoutCredentials()
+        credential.logoutCredentials()
         
         let loginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginController") as! LoginController
         self.view.window?.rootViewController = UINavigationController(rootViewController: loginController)
@@ -152,7 +153,7 @@ extension HomeController: HomeViewProtocol {
         }
     }
     
-    func tokenIsValid(description: String) {
+    func message(description: String) {
         DispatchQueue.main.async {
             self.showToast(message: description, font: .systemFont(ofSize: 12.0))
         }

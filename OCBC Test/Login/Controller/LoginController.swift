@@ -117,7 +117,7 @@ extension LoginController: LoginViewProtocol {
     
     func successfullLogin(response: LoginResponseModel) {
         // TODO:
-        Credential.shared.saveCredential(response: response)
+        credential.saveCredential(response: response)
         DispatchQueue.main.async {
             let controller = self.storyboards.instantiateViewController(withIdentifier: "homeController") as! HomeController
             self.view.window?.rootViewController = controller
