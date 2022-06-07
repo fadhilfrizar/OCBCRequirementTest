@@ -49,9 +49,9 @@ class RegisterFormModelValidatorTests: XCTestCase {
     
     func testRegisterFormModelValidator_WhenTooLongUsernameProvided_ShouldReturnFalse() {
         
-        let isUsernameValid = sut.isUsernameValid(username: "testestestest")
+        let isUsernameValid = sut.isUsernameValid(username: "testestestesttestestest")
         
-        XCTAssertFalse(isUsernameValid, "The isUsernameValid() should have returned FALSE for a first name that is longer than 10 characters but it has returned TRUE")
+        XCTAssertFalse(isUsernameValid, "The isUsernameValid() should have returned FALSE for a first name that is longer than 20 characters but it has returned TRUE")
     }
     
     // MARK: Password Validation
@@ -78,10 +78,10 @@ class RegisterFormModelValidatorTests: XCTestCase {
     func testRegisterFormModelValidator_WhenTooLongPasswordProvided_ShouldReturnFalse() {
         
         // Act
-        let isPasswordValid = sut.isPasswordValid(password: "12345678901234567")
+        let isPasswordValid = sut.isPasswordValid(password: "1234567890123456712312312")
         
         // Assert
-        XCTAssertFalse(isPasswordValid, "The isPasswordValid() should have returned FALSE for a password that is longer than 10 but it has returned TRUE")
+        XCTAssertFalse(isPasswordValid, "The isPasswordValid() should have returned FALSE for a password that is longer than 20 but it has returned TRUE")
         
     }
     

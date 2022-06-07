@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
 
-    func toDate(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ss'Z'") -> String {
+    func toDateString(withFormat format: String = "yyyy-MM-dd'T'HH:mm:ss'Z'") -> String {
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format

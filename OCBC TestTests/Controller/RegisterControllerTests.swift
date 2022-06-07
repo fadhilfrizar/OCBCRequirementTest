@@ -67,18 +67,18 @@ class RegisterControllerTests: XCTestCase {
     
     func testRegisterController_WhenRegisterButtonTapped_InvokesRegisterProcess() {
         // Arrange
-//        let mockLoginModelValidator = MockLoginModelValidator()
-//        let mockLoginService = MockLoginService()
-//        let mockLoginViewDelegate = MockLoginViewDelegate()
-//        
-//        let mockLoginPresenter = MockLoginPresenter(formModelValidator: mockLoginModelValidator, webservice: mockLoginService, delegate: mockLoginViewDelegate)
-//        
-//        sut.loginPresenter = mockLoginPresenter
-//        
-//        // Act
-//        sut.loginButton.sendActions(for: .touchUpInside)
-//        
-//        // Assert
-//        XCTAssertTrue(mockLoginPresenter.processLoginCalled, "The processLoginCalled() method was not called on a Presenter object when the signup button was tapped in a SignupViewController")
+        let mockRegisterModelValidator = MockRegisterModelValidator()
+        let mockRegisterService = MockRegisterService()
+        let mockRegisterViewDelegate = MockRegisterViewDelegate()
+        
+        let mockRegisterPresenter = MockRegisterPresenter(formModelValidator: mockRegisterModelValidator, webservice: mockRegisterService, delegate: mockRegisterViewDelegate)
+        
+        sut.registerPresenter = mockRegisterPresenter
+        
+        // Act
+        sut.registerButton.sendActions(for: .touchUpInside)
+        
+        // Assert
+        XCTAssertTrue(mockRegisterPresenter.processRegisterCalled, "The processRegisterCalled() method was not called on a Presenter object when the signup button was tapped in a RegisterController")
     }
 }

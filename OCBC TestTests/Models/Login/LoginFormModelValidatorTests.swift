@@ -50,7 +50,7 @@ class LoginFormModelValidatorTests: XCTestCase {
         
         let isUsernameValid = sut.isUsernameValid(username: "testestestest")
         
-        XCTAssertFalse(isUsernameValid, "The isUsernameValid() should have returned FALSE for a first name that is longer than 10 characters but it has returned TRUE")
+        XCTAssertFalse(isUsernameValid, "The isUsernameValid() should have returned FALSE for a first name that is longer than 20 characters but it has returned TRUE")
     }
     
     // MARK: Password Validation
@@ -80,7 +80,7 @@ class LoginFormModelValidatorTests: XCTestCase {
         let isPasswordValid = sut.isPasswordValid(password: "12345678901234567")
         
         // Assert
-        XCTAssertFalse(isPasswordValid, "The isPasswordValid() should have returned FALSE for a password that is longer than 10 but it has returned TRUE")
+        XCTAssertFalse(isPasswordValid, "The isPasswordValid() should have returned FALSE for a password that is longer than 20 but it has returned TRUE")
         
     }
 

@@ -55,6 +55,7 @@ class LoginController: UIViewController {
     
     let storyboards = UIStoryboard(name: "Main", bundle: nil)
     var loginPresenter: LoginPresenterProtocol?
+    let credential = Credential()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,9 +91,9 @@ extension LoginController {
     }
 }
 
-
+//MARK: login view protocol
 extension LoginController: LoginViewProtocol {
-    func usernameAndPasswordEmpty(description: String) {
+    func message(description: String) {
         self.passwordErrorMessageLabel.isHidden = false
         self.passwordErrorMessageLabel.text = description
         self.indicator.isHidden = true

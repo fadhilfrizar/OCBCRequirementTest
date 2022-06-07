@@ -88,7 +88,7 @@ extension RegisterController: RegisterViewProtocol {
         }
     }
     
-    func passwordNotMatch(description: String) {
+    func message(description: String) {
         DispatchQueue.main.async {
             self.passwordErrorMessageLabel.isHidden = false
             self.passwordErrorMessageLabel.text = description

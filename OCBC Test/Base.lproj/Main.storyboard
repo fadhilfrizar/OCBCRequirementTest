@@ -345,7 +345,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoY-yc-OS3" customClass="LogoutButton" customModule="OCBC_Test" customModuleProvider="target">
-                                                <rect key="frame" x="331" y="32" width="67" height="50"/>
+                                                <rect key="frame" x="328.5" y="32" width="69.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="crk-Z7-K2K"/>
                                                 </constraints>
@@ -449,7 +449,7 @@
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 </collectionViewFlowLayout>
                                                 <cells/>
                                             </collectionView>
@@ -536,16 +536,16 @@
     </scenes>
     <designables>
         <designable name="4wh-nk-uSz">
-            <size key="intrinsicContentSize" width="86" height="38"/>
+            <size key="intrinsicContentSize" width="75" height="33.5"/>
         </designable>
         <designable name="Ea8-cI-QHN">
-            <size key="intrinsicContentSize" width="86" height="38"/>
+            <size key="intrinsicContentSize" width="75" height="33.5"/>
         </designable>
         <designable name="aoY-yc-OS3">
-            <size key="intrinsicContentSize" width="67" height="31"/>
+            <size key="intrinsicContentSize" width="69.5" height="31"/>
         </designable>
         <designable name="nsT-MK-Eos">
-            <size key="intrinsicContentSize" width="86" height="38"/>
+            <size key="intrinsicContentSize" width="75" height="33.5"/>
         </designable>
     </designables>
     <resources>

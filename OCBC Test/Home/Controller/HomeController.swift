@@ -36,6 +36,9 @@ class HomeController: UIViewController {
             transactionCollectionView.dataSource = self
             
             transactionCollectionView.register(UINib(nibName: "TransactionHistoryCell", bundle: nil), forCellWithReuseIdentifier: "transactionHistoryCell")
+            transactionCollectionView.register(UINib(nibName: "TransactionHistoryReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "transactionHistoryReusableView")
+
+            
         }
     }
     
@@ -52,9 +55,7 @@ class HomeController: UIViewController {
     let storyboards = UIStoryboard(name: "Main", bundle: nil)
     var homePresenter: HomePresenterProtocol?
     
-    
-    var transactionData: [TransactionDataModel] = []
-    var transactionFilteredData: [Date: [TransactionDataModel]] = [:]
+    var transactionFilteredData: [String: [TransactionDataModel]] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,13 +111,11 @@ extension HomeController: HomeViewProtocol {
     func successfullGetTransaction(response: TransactionResponseModel) {
         //MARK: getting data transaction
         DispatchQueue.main.async {
-            for data in response.data ?? [] {
-                self.transactionData.append(data)
-            }
             
-            let groupByDate = Dictionary(grouping: self.transactionData) { (data) -> Date in
-                let format = data.transactionDate?.getFormattedDate(dateString: data.transactionDate ?? "")
-                return format ?? Date()
+            let groupByDate = Dictionary(grouping: response.data ?? []) { (data) -> String in
+                let format = data.transactionDate?.toDateString(withFormat: data.transactionDate ?? "")
+                
+                return format ?? ""
             }
             self.transactionFilteredData = groupByDate
             self.transactionCollectionView.reloadData()
@@ -165,18 +164,36 @@ extension HomeController: HomeViewProtocol {
 
 //MARK: collection view delegate
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return transactionFilteredData.keys.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return transactionData.count
+        return transactionFilteredData[Array(transactionFilteredData.keys)[section]]?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "transactionHistoryReusableView", for: indexPath) as! TransactionHistoryReusableView
+        
+        header.dateLabel.text = "  \(Array(transactionFilteredData.keys)[indexPath.section])"
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width - 32, height: 50)
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "transactionHistoryCell", for: indexPath) as! TransactionHistoryCell
-        cell.transactionData = self.transactionData[indexPath.row]
+        let data = transactionFilteredData[Array(transactionFilteredData.keys)[indexPath.section]]
+        cell.transactionData = data?[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width - 32, height: 100)
+        return CGSize(width: self.view.frame.width - 32, height: 75)
     }
     
 }

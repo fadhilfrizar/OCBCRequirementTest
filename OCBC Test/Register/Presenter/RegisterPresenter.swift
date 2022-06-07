@@ -23,14 +23,16 @@ class RegisterPresenter: RegisterPresenterProtocol {
     func processRegister(formModel: RegisterFormModel) {
         
         if !formModelValidator.isConfirmPasswordValid(password: formModel.password, confirmPassword: formModel.repeatPassword) {
-            self.delegate?.passwordNotMatch(description: "Confirm password not match")
+            self.delegate?.message(description: "Confirm password not match")
             return
         }
         
         if !formModelValidator.isUsernameValid(username: formModel.username) {
+            self.delegate?.message(description: "Username is invalid")
             return
         }
         if !formModelValidator.isPasswordValid(password: formModel.password) {
+            self.delegate?.message(description: "Password is invalid")
             return
         }
         

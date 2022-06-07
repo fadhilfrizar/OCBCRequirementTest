@@ -12,7 +12,7 @@ class LoginFormModelValidator: LoginModelValidatorProtocol {
     func isUsernameValid(username: String) -> Bool {
         var returnValue = true
         
-        if username.count < 2 || username.count > 10 {
+        if username.count < 2 || username.count > 20 {
             returnValue = false
         }
         
@@ -22,7 +22,7 @@ class LoginFormModelValidator: LoginModelValidatorProtocol {
     func isPasswordValid(password: String) -> Bool {
         var returnValue = true
         
-        if password.count < 2 || password.count > 10 {
+        if password.count < 2 || password.count > 20 {
             returnValue = false
         }
         

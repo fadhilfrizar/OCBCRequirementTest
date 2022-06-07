@@ -22,7 +22,7 @@ class RegisterFormModelValidator: RegisterModelValidatorProtocol {
     func isPasswordValid(password: String) -> Bool {
         var returnValue = true
         
-        if password.count < 2 || password.count > 10 {
+        if password.count < 2 || password.count > 20 {
             returnValue = false
         }
         

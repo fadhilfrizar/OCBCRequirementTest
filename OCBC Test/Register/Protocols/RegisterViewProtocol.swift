@@ -12,5 +12,5 @@ protocol RegisterViewProtocol: AnyObject {
     func errorHandler(error: RegisterError)
     func startLoading()
     func finishLoading()
-    func passwordNotMatch(description: String)
+    func message(description: String)
 }

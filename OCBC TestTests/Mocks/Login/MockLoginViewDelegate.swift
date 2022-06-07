@@ -33,7 +33,7 @@ class MockLoginViewDelegate: LoginViewProtocol {
     func finishLoading() {
     }
     
-    func usernameAndPasswordEmpty(description: String) {
+    func message(description: String) {
         expectation?.fulfill()
     }
  

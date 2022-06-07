@@ -68,6 +68,9 @@
 		8547AFF0284DFF97002233AC /* RegisterFormModelValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFEF284DFF97002233AC /* RegisterFormModelValidatorTests.swift */; };
 		8547AFF3284E01CA002233AC /* RegisterServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFF2284E01CA002233AC /* RegisterServiceTests.swift */; };
 		8547AFF6284E0359002233AC /* RegisterPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFF5284E0359002233AC /* RegisterPresenterTests.swift */; };
+		8547AFF8284E5685002233AC /* CredentialProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFF7284E5685002233AC /* CredentialProtocol.swift */; };
+		8547AFFE284EFAC2002233AC /* TransactionHistoryReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8547AFFC284EFAC2002233AC /* TransactionHistoryReusableView.swift */; };
+		8547AFFF284EFAC2002233AC /* TransactionHistoryReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8547AFFD284EFAC2002233AC /* TransactionHistoryReusableView.xib */; };
 		85A40E3A284D9CD30064417C /* TranscationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E39284D9CD30064417C /* TranscationResponseModel.swift */; };
 		85A40E3C284D9D710064417C /* TransactionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E3B284D9D710064417C /* TransactionRequestModel.swift */; };
 		85A40E3E284DA8240064417C /* MockHomeModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A40E3D284DA8240064417C /* MockHomeModelValidator.swift */; };
@@ -173,6 +176,9 @@
 		8547AFEF284DFF97002233AC /* RegisterFormModelValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormModelValidatorTests.swift; sourceTree = "<group>"; };
 		8547AFF2284E01CA002233AC /* RegisterServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceTests.swift; sourceTree = "<group>"; };
 		8547AFF5284E0359002233AC /* RegisterPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterTests.swift; sourceTree = "<group>"; };
+		8547AFF7284E5685002233AC /* CredentialProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialProtocol.swift; sourceTree = "<group>"; };
+		8547AFFC284EFAC2002233AC /* TransactionHistoryReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryReusableView.swift; sourceTree = "<group>"; };
+		8547AFFD284EFAC2002233AC /* TransactionHistoryReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryReusableView.xib; sourceTree = "<group>"; };
 		85A40E39284D9CD30064417C /* TranscationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationResponseModel.swift; sourceTree = "<group>"; };
 		85A40E3B284D9D710064417C /* TransactionRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRequestModel.swift; sourceTree = "<group>"; };
 		85A40E3D284DA8240064417C /* MockHomeModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeModelValidator.swift; sourceTree = "<group>"; };
@@ -285,8 +291,7 @@
 		853E9D042848BB2E004F3ED6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				853E9D052848BB6C004F3ED6 /* TransactionHistoryCell.swift */,
-				853E9D062848BB6C004F3ED6 /* TransactionHistoryCell.xib */,
+				8547AFFB284EF9D6002233AC /* CollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				853E9D592849A600004F3ED6 /* Credential.swift */,
+				8547AFF7284E5685002233AC /* CredentialProtocol.swift */,
 			);
 			path = Credential;
 			sourceTree = "<group>";
@@ -526,6 +532,17 @@
 				8547AFF5284E0359002233AC /* RegisterPresenterTests.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		8547AFFB284EF9D6002233AC /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				853E9D052848BB6C004F3ED6 /* TransactionHistoryCell.swift */,
+				853E9D062848BB6C004F3ED6 /* TransactionHistoryCell.xib */,
+				8547AFFC284EFAC2002233AC /* TransactionHistoryReusableView.swift */,
+				8547AFFD284EFAC2002233AC /* TransactionHistoryReusableView.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		85A40E2E284CEC250064417C /* Login */ = {
@@ -825,6 +842,7 @@
 			files = (
 				853E9CDC2848B1B4004F3ED6 /* LaunchScreen.storyboard in Resources */,
 				853E9CD92848B1B4004F3ED6 /* Assets.xcassets in Resources */,
+				8547AFFF284EFAC2002233AC /* TransactionHistoryReusableView.xib in Resources */,
 				853E9CD72848B1B2004F3ED6 /* Main.storyboard in Resources */,
 				853E9D082848BB6C004F3ED6 /* TransactionHistoryCell.xib in Resources */,
 			);
@@ -862,6 +880,7 @@
 				853E9D372849197D004F3ED6 /* LoginPresenter.swift in Sources */,
 				853E9D662849F0B0004F3ED6 /* HomePresenter.swift in Sources */,
 				853E9D622849BDFD004F3ED6 /* LogoutButton.swift in Sources */,
+				8547AFF8284E5685002233AC /* CredentialProtocol.swift in Sources */,
 				853E9D26284916DF004F3ED6 /* LoginResponseModel.swift in Sources */,
 				85A40E67284DF4370064417C /* RegisterService.swift in Sources */,
 				85A40E5D284DF38B0064417C /* RegisterServiceProtocol.swift in Sources */,
@@ -891,6 +910,7 @@
 				853E9D5C2849AC0F004F3ED6 /* ToastView.swift in Sources */,
 				853E9D762849F358004F3ED6 /* HomePresenterProtocol.swift in Sources */,
 				853E9CD02848B1B2004F3ED6 /* AppDelegate.swift in Sources */,
+				8547AFFE284EFAC2002233AC /* TransactionHistoryReusableView.swift in Sources */,
 				853E9CD22848B1B2004F3ED6 /* SceneDelegate.swift in Sources */,
 				853E9D0B2848BBB2004F3ED6 /* LoginButton.swift in Sources */,
 				85A40E54284DF3310064417C /* RegisterResponseModel.swift in Sources */,

@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-class Credential {
+class Credential: CredentialProtocol {
+
     
     static let shared = Credential()
     let defaults = UserDefaults.standard

@@ -33,7 +33,7 @@ class MockRegisterViewDelegate: RegisterViewProtocol {
     func finishLoading() {
     }
     
-    func passwordNotMatch(description: String) {
+    func message(description: String) {
         expectation?.fulfill()
     }
     

@@ -24,15 +24,17 @@ class LoginPresenter: LoginPresenterProtocol {
         
         
         if !formModelValidator.isUsernamePasswordNotEmpty(username: formModel.username, password: formModel.password) {
-            self.delegate?.usernameAndPasswordEmpty(description: "Username and password is required")
+            self.delegate?.message(description: "Username and password is required")
             return
         }
         
         if !formModelValidator.isUsernameValid(username: formModel.username) {
+            self.delegate?.message(description: "Username is invalid")
             return
         }
         
         if !formModelValidator.isPasswordValid(password: formModel.password) {
+            self.delegate?.message(description: "Password is invalid")
             return
         }
         

@@ -12,12 +12,9 @@ class TransactionHistoryCell: UICollectionViewCell {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var accountNoLabel: UILabel!
     @IBOutlet weak var accountHolderLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
     
     var transactionData: TransactionDataModel! {
         didSet {
-            
-            let format = transactionData.transactionDate?.toDate(withFormat: transactionData.transactionDate ?? "")
             
             self.balanceLabel.text = "SGD \(transactionData.amount ?? 0.0)"
             self.accountNoLabel.text = transactionData.receipient?.accountNo ?? ""
@@ -28,7 +25,6 @@ class TransactionHistoryCell: UICollectionViewCell {
             } else {
                 self.balanceLabel.textColor = UIColor.green
             }
-            self.timeLabel.text = format
         }
     }
     
