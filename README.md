@@ -10,7 +10,7 @@
 
 ### Technology Stack  
   
-#### MVVM Architecture  
+#### MVP Architecture  
 
 - **Model** is an interface responsible for the domain data (to be displayed or otherwise acted upon in the GUI)  
 - **View** is responsible for the presentation layer (GUI)  
